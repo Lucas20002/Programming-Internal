@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1b8a10ie15b7"]
+
+[ext_resource type="Script" path="res://CharacterMovement.gd" id="1_8tjg8"]
+[ext_resource type="Texture2D" uid="uid://biwpl270s7gjk" path="res://Sprites & Tilesheets/Why did i make this.png" id="2_eh1jq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe2tu"]
+radius = 15.0333
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_8tjg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.0128175, 0.0128175)
+texture = ExtResource("2_eh1jq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qe2tu")
