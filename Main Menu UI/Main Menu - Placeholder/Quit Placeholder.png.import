@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biwpl270s7gjk"
-path="res://.godot/imported/Why did i make this.png-90a501cc0ca9e715606cfadf76c5d5fd.ctex"
+uid="uid://dd0iq2k5yye25"
+path="res://.godot/imported/Quit Placeholder.png-36ccfa61ffcb97fd2e3cea3ab48fa651.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites & Tilesheets/Why did i make this.png"
-dest_files=["res://.godot/imported/Why did i make this.png-90a501cc0ca9e715606cfadf76c5d5fd.ctex"]
+source_file="res://Main Menu UI/Main Menu - Placeholder/Quit Placeholder.png"
+dest_files=["res://.godot/imported/Quit Placeholder.png-36ccfa61ffcb97fd2e3cea3ab48fa651.ctex"]
 
 [params]
 
