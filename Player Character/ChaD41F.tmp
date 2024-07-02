@@ -19,12 +19,3 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qe2tu")
-
-[node name="floatUpTimer" type="Timer" parent="."]
-wait_time = 0.15
-
-[node name="wallJumpTimer" type="Timer" parent="."]
-wait_time = 0.15
-
-[connection signal="timeout" from="floatUpTimer" to="." method="_on_float_up_timer_timeout"]
-[connection signal="timeout" from="wallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
