@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c718ldevunw71" path="res://Player Character/char.png" id="2_1i7mj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ocp8r"]
-radius = 19.3372
+radius = 23.0217
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ws07b")

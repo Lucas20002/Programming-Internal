@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const WALL_SPEED_GRAVITY = 100.0
+const WALL_SPEED_GRAVITY = 50.0
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 const FLOAT_UP_VELOCITY = -200.0
@@ -91,5 +91,8 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
 
+func respawn():
+	get_tree().reload_current_scene()
 
-
+func _on_area_2d_body_entered(body):
+	body.respawn()
