@@ -4,27 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://c718ldevunw71" path="res://Player Character/char.png" id="2_1i7mj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ocp8r"]
-radius = 19.3372
+radius = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ws07b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.33331, 0.461511)
-scale = Vector2(0.589743, 0.589743)
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.51883, 0.51883)
 texture = ExtResource("2_1i7mj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3.33337, 6.38461)
 zoom = Vector2(1.5, 1.5)
 
 [node name="wallJumpTimer" type="Timer" parent="."]
 wait_time = 0.15
 
 [node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.333372, 0.384613)
 shape = SubResource("CircleShape2D_ocp8r")
 
 [connection signal="timeout" from="wallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
