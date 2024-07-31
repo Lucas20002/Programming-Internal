@@ -42,7 +42,7 @@ layer_1/tile_data = PackedInt32Array(-1048560, 262144, 0, -1048559, 262144, 0, -
 position = Vector2(800, 995)
 scale = Vector2(25, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="World Boundary" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(5, 5)
 shape = SubResource("WorldBoundaryShape2D_p3kwl")
 
