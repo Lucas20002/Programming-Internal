@@ -1,35 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://yd0yor0geakr"]
+[gd_scene load_steps=8 format=3 uid="uid://yd0yor0geakr"]
 
 [ext_resource type="Script" path="res://PlayerHUD.gd" id="1_7n3yl"]
 [ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://Sprites & Tilesheets/Place holder Tiles/tileset.res" id="1_meavu"]
 [ext_resource type="PackedScene" uid="uid://1b8a10ie15b7" path="res://Player Character/CharacterControl.tscn" id="1_xk0un"]
+[ext_resource type="Script" path="res://EndGoalScript.gd" id="4_jdalm"]
+[ext_resource type="PackedScene" uid="uid://ciwwmswbn7404" path="res://level_complete.tscn" id="4_p1rto"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p3kwl"]
 distance = 3.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq4c4"]
-size = Vector2(50, 350)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhrgu"]
+radius = 30.0
+height = 384.0
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(30, 80)
 script = ExtResource("1_7n3yl")
 
-[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("1_xk0un")]
-position = Vector2(826, 652)
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_xk0un")]
+position = Vector2(815, 641)
+script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+[node name="LevelTimeLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 58.0
+offset_bottom = 23.0
 grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="LevelTimeLabel" type="Label" parent="CanvasLayer/CenterContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 horizontal_alignment = 1
@@ -51,16 +50,20 @@ position = Vector2(800, 995)
 scale = Vector2(25, 1)
 
 [node name="World Boundary" type="CollisionShape2D" parent="Boundary"]
-position = Vector2(0, -1)
 scale = Vector2(5, 5)
 shape = SubResource("WorldBoundaryShape2D_p3kwl")
 
-[node name="Goal" type="Area2D" parent="."]
-position = Vector2(1696, 266)
+[node name="EndGoal" type="Area2D" parent="."]
+script = ExtResource("4_jdalm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
-position = Vector2(0, -18)
-shape = SubResource("RectangleShape2D_iq4c4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndGoal"]
+position = Vector2(1694, 250)
+shape = SubResource("CapsuleShape2D_mhrgu")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Level Complete" parent="CanvasLayer2" instance=ExtResource("4_p1rto")]
+script = null
 
 [connection signal="body_entered" from="Boundary" to="CharacterBody2D" method="_on_boundary_body_entered"]
-[connection signal="body_entered" from="Goal" to="CharacterBody2D" method="_on_goal_body_entered"]
+[connection signal="body_entered" from="EndGoal" to="CharacterBody2D" method="_on_end_goal_body_entered"]

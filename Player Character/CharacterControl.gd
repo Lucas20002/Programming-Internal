@@ -108,5 +108,12 @@ func _physics_process(delta):
 func respawn():
 	get_tree().reload_current_scene()
 
-func _on_area_2d_body_entered(body):
-	body.respawn()
+func _on_boundary_body_entered(body):
+	if body.is_in_group("Player"):
+		print("Respawn")
+		body.respawn()
+
+func _on_goal_body_entered(body):
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://level_complete.tscn")
+		print("Level Complete")
