@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://1b8a10ie15b7"]
+[gd_scene load_steps=5 format=3 uid="uid://1b8a10ie15b7"]
 
 [ext_resource type="Script" path="res://Player Character/CharacterControl.gd" id="1_ws07b"]
-[ext_resource type="Texture2D" uid="uid://biwpl270s7gjk" path="res://Player Character/Why did i make this.png" id="2_eh1jq"]
+[ext_resource type="Texture2D" uid="uid://c718ldevunw71" path="res://Player Character/char.png" id="2_1i7mj"]
+[ext_resource type="Script" path="res://PlayerHUD.gd" id="3_16wb2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qe2tu"]
 radius = 15.0333
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(572, 431)
 script = ExtResource("1_ws07b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,4 +20,31 @@ texture = ExtResource("2_eh1jq")
 zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_qe2tu")
+shape = SubResource("CircleShape2D_ocp8r")
+
+[node name="PlayerHUD" type="Node2D" parent="."]
+script = ExtResource("3_16wb2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerHUD"]
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayerHUD/CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 187.0
+offset_top = 215.0
+offset_right = -197.0
+offset_bottom = 273.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="LevelTimeLabel" type="Label" parent="PlayerHUD/CanvasLayer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="wallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

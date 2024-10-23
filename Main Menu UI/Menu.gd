@@ -1,7 +1,8 @@
 extends Control
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://CharacterControl.tscn")
+	Global.Timeractive == true
+	get_tree().change_scene_to_file("res://Test Level.tscn")
 
 
 func _on_options_pressed():
