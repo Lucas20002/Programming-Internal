@@ -117,3 +117,4 @@ func _on_goal_body_entered(body):
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://level_complete.tscn")
 		print("Level Complete")
+		print(Menu.finalTime)

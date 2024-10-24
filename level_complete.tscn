@@ -2,7 +2,7 @@
 
 [sub_resource type="GDScript" id="GDScript_piboa"]
 script/source = "extends ColorRect
-
+@onready var level_complete_time_display = $CenterContainer/finalTimetxt
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,23 +11,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	level_complete_time_display.text =\"Level Completed: \\nYour time was \" + Menu.finalTime
 "
 
 [node name="Level Complete" type="ColorRect"]
-offset_right = 512.0
-offset_bottom = 256.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.447059)
 script = SubResource("GDScript_piboa")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 2.25
+anchor_bottom = 2.531
+offset_bottom = 0.0639648
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="finalTimetxt" type="Label" parent="CenterContainer"]
 layout_mode = 2
-text = "Level Completed"

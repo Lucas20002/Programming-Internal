@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	level_time = Time.get_ticks_msec() - start_level_msec
 	level_time_label.text = str(level_time / 1000.0)
+	Menu.finalTime = str(level_time / 1000.0)
 
 func write_score_to_file():
 	var file = FileAccess.open("score file here", FileAccess.WRITE)

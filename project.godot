@@ -15,6 +15,10 @@ run/main_scene="res://Main Menu UI/Main Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Menu="*res://Main Menu UI/Menu.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
