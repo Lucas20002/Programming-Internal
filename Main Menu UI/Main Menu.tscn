@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4d8o3ve65sm"]
+[gd_scene load_steps=6 format=3 uid="uid://dn4d8o3ve65sm"]
 
-[ext_resource type="Texture2D" uid="uid://b4i727xpqygvr" path="res://Main Menu UI/Main Menu - Placeholder/Title Placeholder.png" id="1_flpkf"]
 [ext_resource type="Script" path="res://Main Menu UI/Menu.gd" id="1_psokl"]
 [ext_resource type="Texture2D" uid="uid://drvyksrqfgb4i" path="res://Main Menu UI/Main Menu - Placeholder/New Game Placeholder.png" id="2_larah"]
 [ext_resource type="Texture2D" uid="uid://bidjdeuafu4v4" path="res://Main Menu UI/Main Menu - Placeholder/Options Placeholder.png" id="4_v4oqp"]
@@ -38,10 +37,10 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Title" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_flpkf")
-stretch_mode = 4
+theme_override_font_sizes/font_size = 50
+text = "Robot Platformer Game"
 
 [node name="Main Menu" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,14 +69,6 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("6_dcqwj")
 stretch_mode = 4
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Side Art" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
-layout_mode = 2
-texture = ExtResource("1_flpkf")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main Menu/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main Menu/Options" to="." method="_on_options_pressed"]
