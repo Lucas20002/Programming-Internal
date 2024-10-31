@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ni8gx0s8sb6k"
-path="res://.godot/imported/Flag.png-717ba80142ee6ee5cb7c75606cea6c5c.ctex"
+uid="uid://c8ha2u3pjuxp0"
+path="res://.godot/imported/End Goal Flag.png-b48fb9a644a99a9b237af9274b8c87fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites & Tilesheets/Flag.png"
-dest_files=["res://.godot/imported/Flag.png-717ba80142ee6ee5cb7c75606cea6c5c.ctex"]
+source_file="res://Sprites & Tilesheets/End Goal Flag.png"
+dest_files=["res://.godot/imported/End Goal Flag.png-b48fb9a644a99a9b237af9274b8c87fa.ctex"]
 
 [params]
 
