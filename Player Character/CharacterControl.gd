@@ -23,6 +23,7 @@ func jump():
 
 #when the coyote timer ends can_jump is set to false which disables the players ability to jump
 #until they are touching the ground or a wall
+#coyote time allows the player to jump in mid air if they ran off the ledge instead of jumping which can save them from falling
 func _on_coyote_timer_timeout():
 	can_jump = false
 
@@ -67,6 +68,8 @@ func _physics_process(delta):
 	if Input.is_action_just_released("jump") and is_on_wall_only():
 		can_jump = false
 	
+	#When the player's collision is only touching the wall and is holding the direction the wall is facing the character
+	#will slide down this wall
 	if is_on_wall_only():
 		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			wall_sliding = true

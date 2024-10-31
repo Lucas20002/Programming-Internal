@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://yd0yor0geakr"]
+[gd_scene load_steps=7 format=3 uid="uid://yd0yor0geakr"]
 
 [ext_resource type="Script" path="res://PlayerHUD.gd" id="1_7n3yl"]
 [ext_resource type="TileSet" uid="uid://dvu6xanwufudg" path="res://Sprites & Tilesheets/Place holder Tiles/tileset.res" id="1_meavu"]
 [ext_resource type="PackedScene" uid="uid://1b8a10ie15b7" path="res://Player Character/CharacterControl.tscn" id="1_xk0un"]
+[ext_resource type="Texture2D" uid="uid://ni8gx0s8sb6k" path="res://Sprites & Tilesheets/Flag.png" id="4_xt1gd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p3kwl"]
 distance = 3.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iq4c4"]
-size = Vector2(50, 350)
+size = Vector2(50, 140.5)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(30, 80)
@@ -58,8 +59,13 @@ shape = SubResource("WorldBoundaryShape2D_p3kwl")
 [node name="Goal" type="Area2D" parent="."]
 position = Vector2(1696, 266)
 
+[node name="Sprite2D" type="Sprite2D" parent="Goal"]
+position = Vector2(3.99995, 50)
+scale = Vector2(0.582068, 0.816406)
+texture = ExtResource("4_xt1gd")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
-position = Vector2(0, -18)
+position = Vector2(2, 84.25)
 shape = SubResource("RectangleShape2D_iq4c4")
 
 [connection signal="body_entered" from="Boundary" to="CharacterBody2D" method="_on_boundary_body_entered"]

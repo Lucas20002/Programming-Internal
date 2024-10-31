@@ -26,5 +26,15 @@ wait_time = 0.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ocp8r")
 
+[node name="Controls" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -62.0
+offset_right = 33.0
+offset_bottom = -17.0
+theme_override_font_sizes/font_size = 9
+text = "WASD To Move
+Space To Jump
+Find The Flag!"
+
 [connection signal="timeout" from="wallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

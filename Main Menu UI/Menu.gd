@@ -1,7 +1,6 @@
 extends Control
 
 var finalTime = 0
-
 func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://Test Level.tscn")
 
